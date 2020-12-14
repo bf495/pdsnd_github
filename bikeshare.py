@@ -1,12 +1,3 @@
-"""
-Sources:
-https://smallbusiness.chron.com/making-raw-input-lowercase-python-31840.html
-https://www.w3schools.com/python/python_try_except.asp
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
-https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
-"""
-
-
 import time
 import pandas as pd
 import numpy as np
