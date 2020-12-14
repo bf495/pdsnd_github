@@ -1,4 +1,4 @@
-## Project - Explore US Bikeshare Data
+# Project - Explore US Bikeshare Data
 The goal of this project is to analyze data related to bike share systems by using Python. The code looks at datasets from .csv files to provide metrics/statistics to the user. The raw data can also be vieiwed if desired. The user can filter this data using several options, including city, month and day of the week.
 
 ## Datasets
@@ -32,3 +32,6 @@ Randomly selected data for the first six months of 2017 are provided for all thr
  - https://www.w3schools.com/python/python_try_except.asp
  - https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
  - https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
+
+## Notes
+The .csv files are not uploaded to the repository due to size
