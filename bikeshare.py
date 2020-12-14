@@ -1,12 +1,3 @@
-"""
-Sources:
-https://smallbusiness.chron.com/making-raw-input-lowercase-python-31840.html
-https://www.w3schools.com/python/python_try_except.asp
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
-https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
-"""
-
-
 import time
 import pandas as pd
 import numpy as np
@@ -44,7 +35,7 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-# TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs   
+# Collects user input for desired city 
     city = input("Hello! Please select one the following cities: Chicago, New York City, Washington \n").lower()
     while city not in CITY_DATA:
         print("\nOops! It seems there was an error with your selection. The selected city was not found. Restarting...")
@@ -52,7 +43,7 @@ def get_filters():
             
     print("You chose: ", city.capitalize())
 
-# TO DO: get user input for month (all, january, february, ... , june)
+# Collects user input for desired month
     month = input("Which month would you like to analyze: January, February, March, April, May, June, or All? \n").lower()
     while month not in MONTHS:
         print("\nOops! It seems there was an error with your selection. The selected month was not found. Restarting...")
@@ -60,7 +51,7 @@ def get_filters():
     
     print("You chose: ", month.capitalize())
 
-# TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+# Collects user input for desired day of the week
     day = input("Which day would you like to analyze: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or All? \n").lower()
     while day not in DAYS:
         print("\nOops! It seems there was an error with your selection. The selected day was not found. Restarting...")
@@ -108,15 +99,15 @@ def time_stats(df):
     print("\nCalculating The Most Frequent Times of Travel...\n")
     start_time = time.time()
 
-# TO DO: display the most common month
+# Display the most popular month
     pop_month = df['month'].mode()[0]
     print("Most Popular Month: ", pop_month)
 
-# TO DO: display the most common day of week
+# Display the most common day of week
     pop_day = df['day'].mode()[0]
     print("Most Popular Day: ", pop_day)
 
-# TO DO: display the most common start hour
+# Display the most common start hour
     pop_hour = df['hour'].mode()[0]
     print("Most Popular Hour: ", pop_hour)
 
@@ -130,15 +121,15 @@ def station_stats(df):
     print("\nCalculating The Most Popular Stations and Trip...\n")
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+# Display the most commonly used start station
     most_common_start = df['Start Station'].mode()[0]
     print("The most commonly used start station is ", most_common_start)
 
-    # TO DO: display most commonly used end station
+# Display the most commonly used end station
     most_common_end = df['End Station'].mode()[0]
     print("The most commonly used end station is ", most_common_end)
 
-    # TO DO: display most frequent combination of start station and end station trip
+# Display the most frequent combination of start station and end station trip
     most_common_combo = df.loc[:, 'Start Station':'End Station'].mode()[0:]
     mcc = most_common_combo.to_string(index=False)
 
@@ -154,12 +145,12 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+# Display the total travel time
     df['time diff'] = df['End Time'] - df['Start Time']
     time_diff_sum = df['time diff'].sum()
     print("The total travel time is ", time_diff_sum)
 
-    # TO DO: display mean travel time
+# Display the mean travel time
     time_diff_mean = df['time diff'].mean()
     print("The mean travel time is ", time_diff_mean)
                          
@@ -174,18 +165,18 @@ def user_stats(df):
     print("\nCalculating User Stats...\n")
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+# Display the counts of user types
     user_counts = df['User Type'].value_counts()
     print("The count of user types is ", user_counts)
 
-    # TO DO: Display counts of gender
+# Display the counts of gender
     try:
         gender_counts = df['Gender'].value_counts()
         print("The count of genders is ", gender_counts)
     except:
         print("No gender data available for this selection")
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+# Display the earliest, most recent, and most common year of birth
     try:
         earliest_year = df['Birth Year'].min()
         ey = earliest_year.astype(int)
@@ -207,7 +198,7 @@ def user_stats(df):
 #Prints raw data upon request from user
 def raw_data(df, n):
     
-    #Ask user if they want to display data
+#Ask user if they want to display data
     raw_data_prompt = input("Would you like to review the next 5 rows of raw data now? Please enter YES or NO \n")
     if raw_data_prompt.lower() == 'yes':
         print(df.iloc[n:n+5])
