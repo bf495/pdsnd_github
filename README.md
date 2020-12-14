@@ -28,7 +28,7 @@ Randomly selected data for the first six months of 2017 are provided for all thr
 6. After declining the option to view raw data, you can choose to run the program again or exit the program
 
 ## Resources
-https://smallbusiness.chron.com/making-raw-input-lowercase-python-31840.html
-https://www.w3schools.com/python/python_try_except.asp
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
-https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
+ - https://smallbusiness.chron.com/making-raw-input-lowercase-python-31840.html
+ - https://www.w3schools.com/python/python_try_except.asp
+ - https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.iloc.html
+ - https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
