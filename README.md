@@ -2,18 +2,18 @@
 The goal of this project is to analyze data related to bike share systems by using Python. The code looks at datasets from .csv files to provide metrics/statistics to the user. The raw data can also be vieiwed if desired. The user can filter this data using several options, including city, month and day of the week.
 
 ## Datasets
-There are three datasets in total. Each contains data from a city - Chicago, New York and Washington. 
+There are three datasets in total. Each one contains randomly selected data from a city - **Chicago**, **New York** and **Washington**. The data was taken from the first six months of 2017.
 
-Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same six columns:
+All three of the data files contain the same six columns:
 
  - Start Time (e.g., 2017-01-01 00:07:57)
- - End Time (e.g., 2017-01-01 00:20:53)
+ - **End Time (e.g., 2017-01-01 00:20:53)
  - Trip Duration (in seconds - e.g., 776)
  - Start Station (e.g., Broadway & Barry Ave)
  - End Station (e.g., Sedgwick St & North Ave)
  - User Type (Subscriber or Customer)
 
-*The Chicago and New York City files also have the following two columns:*
+*The Chicago and New York City files also have the following columns:*
 
  - Gender
  - Birth Year
