@@ -4,7 +4,7 @@ The goal of this project is to analyze data related to bike share systems by usi
 ## Datasets
 There are three datasets in total. Each contains data from a city - Chicago, New York and Washington. 
 
-Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same core six (6) columns:
+Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same six columns:
 
  - Start Time (e.g., 2017-01-01 00:07:57)
  - End Time (e.g., 2017-01-01 00:20:53)
