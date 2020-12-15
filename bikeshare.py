@@ -27,14 +27,15 @@ DAYS = ['sunday',
 n = 0
 
 def get_filters():
-    """
-    Asks user to specify a city, month, and day to analyze.
+"""
+Asks user to specify a city, month, and day to analyze.
 
-    Returns:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    """
+Returns:
+    (str) city - name of the city to analyze
+    (str) month - name of the month to filter by, or "all" to apply no month filter
+    (str) day - name of the day of week to filter by, or "all" to apply no day filter
+"""
+
 # Collects user input for desired city 
     city = input("Hello! Please select one the following cities: Chicago, New York City, Washington \n").lower()
     while city not in CITY_DATA:
@@ -64,16 +65,17 @@ def get_filters():
 
 
 def load_data(city, month, day):
-    """
-    Loads data for the specified city and filters by month and day if applicable.
+"""
+Loads data for the specified city and filters by month and day if applicable.
 
-    Args:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    Returns:
-        df - Pandas DataFrame containing city data filtered by month and day
-    """
+Args:
+    (str) city - name of the city to analyze
+    (str) month - name of the month to filter by, or "all" to apply no month filter
+    (str) day - name of the day of week to filter by, or "all" to apply no day filter
+    
+Returns:
+    df - Pandas DataFrame containing city data filtered by month and day
+"""
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
@@ -94,7 +96,7 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+"""Displays statistics on the most frequent times of travel."""
 
     print("\nCalculating The Most Frequent Times of Travel...\n")
     start_time = time.time()
@@ -116,7 +118,7 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+"""Displays statistics on the most popular stations and trip."""
 
     print("\nCalculating The Most Popular Stations and Trip...\n")
     start_time = time.time()
@@ -140,7 +142,7 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+"""Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
@@ -160,7 +162,7 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+"""Displays statistics on bikeshare users."""
 
     print("\nCalculating User Stats...\n")
     start_time = time.time()
