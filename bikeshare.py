@@ -27,15 +27,6 @@ DAYS = ['sunday',
 n = 0
 
 def get_filters():
-"""
-Asks user to specify a city, month, and day to analyze.
-
-Returns:
-    (str) city - name of the city to analyze
-    (str) month - name of the month to filter by, or "all" to apply no month filter
-    (str) day - name of the day of week to filter by, or "all" to apply no day filter
-"""
-
 # Collects user input for desired city 
     city = input("Hello! Please select one the following cities: Chicago, New York City, Washington \n").lower()
     while city not in CITY_DATA:
@@ -96,8 +87,6 @@ Returns:
 
 
 def time_stats(df):
-"""Displays statistics on the most frequent times of travel."""
-
     print("\nCalculating The Most Frequent Times of Travel...\n")
     start_time = time.time()
 
@@ -118,8 +107,6 @@ def time_stats(df):
 
 
 def station_stats(df):
-"""Displays statistics on the most popular stations and trip."""
-
     print("\nCalculating The Most Popular Stations and Trip...\n")
     start_time = time.time()
 
@@ -142,8 +129,6 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-"""Displays statistics on the total and average trip duration."""
-
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -162,8 +147,6 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-"""Displays statistics on bikeshare users."""
-
     print("\nCalculating User Stats...\n")
     start_time = time.time()
 
@@ -185,22 +168,21 @@ def user_stats(df):
         most_recent_year = df['Birth Year'].max()
         ry = most_recent_year.astype(int)
         most_common_year = df['Birth Year'].mode()
-        mcy = most_common_year.astype(int)
-        mcy1 = mcy.to_string(index=False)
+        mcy_int = most_common_year.astype(int)
+        mcy_string = mcy_int.to_string(index=False)
 
         print("The oldest customer was born in ", ey)
         print("The youngest customer was born in ", ry)
-        print("The common birth year for our customers is ", mcy1)
+        print("The common birth year for our customers is ", mcy_string)
     except:
         print("No birth year data available for this selection")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-#Prints raw data upon request from user
 def raw_data(df, n):
     
-#Ask user if they want to display data
+#Ask user if they want to display raw data
     raw_data_prompt = input("Would you like to review the next 5 rows of raw data now? Please enter YES or NO \n")
     if raw_data_prompt.lower() == 'yes':
         print(df.iloc[n:n+5])
